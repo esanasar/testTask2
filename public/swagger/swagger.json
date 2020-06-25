@@ -14,6 +14,231 @@
     "schemes": [
         "http"
     ],
-    "paths": {},
+    "paths": {
+        "api/apps": {
+            "get": {
+                "description": "Return all apps",
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "description": "app name",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "description",
+                        "in": "query",
+                        "description": "app description",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "icon",
+                        "in": "query",
+                        "description": "app icon",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "creator",
+                        "in": "query",
+                        "description": "app creator",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            },
+            "post": {
+                "description": "add new record to app table",
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "description": "app name",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "description",
+                        "in": "query",
+                        "description": "app description",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "icon",
+                        "in": "query",
+                        "description": "app icon",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "creator",
+                        "in": "query",
+                        "description": "app creator",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "api/apps/{app}": {
+            "get": {
+                "description": "show one record in app table",
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "description": "app name",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "description",
+                        "in": "query",
+                        "description": "app description",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "icon",
+                        "in": "query",
+                        "description": "app icon",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "creator",
+                        "in": "query",
+                        "description": "app creator",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            },
+            "put": {
+                "description": "update record in app table",
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "description": "app name",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "description",
+                        "in": "query",
+                        "description": "app description",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "icon",
+                        "in": "query",
+                        "description": "app icon",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "creator",
+                        "in": "query",
+                        "description": "app creator",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "202": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not found"
+                    }
+                }
+            },
+            "delete": {
+                "description": "delete record from app table",
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "description": "app name",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "description",
+                        "in": "query",
+                        "description": "app description",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "icon",
+                        "in": "query",
+                        "description": "app icon",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "creator",
+                        "in": "query",
+                        "description": "app creator",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "OK"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not found"
+                    }
+                }
+            }
+        }
+    },
     "definitions": {}
 }
