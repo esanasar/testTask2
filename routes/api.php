@@ -18,3 +18,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::apiResource('/apps' , 'AppController');
+
+Route::post('file/upload' , 'FileController@store');

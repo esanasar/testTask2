@@ -9,6 +9,13 @@ use http\Env\Response;
 
 class AppController extends Controller
 {
+
+
+    public function __construct()
+    {
+        $this->middleware('jwt.auth')->only('update' , 'destroy');
+    }
+
     /**
      *
      * @param Request $request
@@ -272,12 +279,15 @@ class AppController extends Controller
             'icon' => 'required|url',
             'creator' => 'required|max:50'
         ]);
+        if (auth()->check()){
 
         $app->update($request->all());
 
         return (new AppResource($app))
             ->response()
             ->setStatusCode(Response::HTTP_CREATED);
+        }
+        return response()->json(['error' => 'unauthorized'], 401);
     }
 
     /**
@@ -337,8 +347,11 @@ class AppController extends Controller
     {
         abort_if(Gate::denies('project_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
+        if (auth()->check()){
         $app->delete();
 
         return response(null, Response::HTTP_NO_CONTENT);
+        }
+        return response()->json(['error' => 'unauthorized'], 401);
     }
 }
