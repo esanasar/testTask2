@@ -21,6 +21,6 @@ then you can [install the mongodb package](https://github.com/jenssegers/laravel
 
 [upload file](https://laravel.com/docs/7.x/filesystem) and show the url of the file in response.
 
-##JWT auth
+## JWT auth
 use [JWT auth](https://github.com/tymondesigns/jwt-auth) for update/delete data in phase 1
 you can see the guid [here](https://jwt-auth.readthedocs.io/en/develop/laravel-installation/)
